@@ -1,14 +1,23 @@
+from collections import OrderedDict
+
 from rest_framework import serializers
 from .models import Book, SearchInfo
 
 
-class SearchInfoSerializer(serializers.ModelSerializer):
+class NonNullModelSerializer(serializers.ModelSerializer):
+    def to_representation(self, instance):
+        result = super().to_representation(instance)
+        # filter out null values with list comprehension
+        return OrderedDict([(key, result[key]) for key in result if result[key] is not None])
+
+
+class SearchInfoSerializer(NonNullModelSerializer):
     class Meta:
         model = SearchInfo
         exclude = ('book', 'id')
 
 
-class BookSerializer(serializers.ModelSerializer):
+class BookSerializer(NonNullModelSerializer):
     searchInfo = SearchInfoSerializer(required=False)
 
     class Meta:
