@@ -4,6 +4,7 @@ from .models import Book, SearchInfo
 from .models.access_info import AccessInfo, Epub, Pdf, DownloadAccess
 from .models.volume_info import VolumeInfo, Author, Category, IndustryIdentifier, Dimensions, \
     ReadingModes, PanelizationSummary, ImageLinks
+from .models.sale_info import SaleInfo, ListPrice, RetailPrice, Offer
 
 
 class NonNullModelSerializer(serializers.ModelSerializer):
@@ -11,6 +12,34 @@ class NonNullModelSerializer(serializers.ModelSerializer):
         result = super().to_representation(instance)
         # filter out null values with list comprehension
         return OrderedDict([(key, result[key]) for key in result if result[key] is not None])
+
+
+class OfferSerializer(NonNullModelSerializer):
+    class Meta:
+        model = Offer
+        exclude = ('saleInfo', 'id', 'listPrice', 'retailPrice')
+
+
+class RetailPriceSerializer(NonNullModelSerializer):
+    class Meta:
+        model = ListPrice
+        exclude = ('saleInfo', 'id')
+
+
+class ListPriceSerializer(NonNullModelSerializer):
+    class Meta:
+        model = ListPrice
+        exclude = ('saleInfo', 'id')
+
+
+class SaleInfoSerializer(NonNullModelSerializer):
+    listPrice = ListPriceSerializer(required=False)
+    retailPrice = RetailPriceSerializer(required=False)
+    offer = OfferSerializer(required=False)
+
+    class Meta:
+        model = SaleInfo
+        exclude = ('book', 'id')
 
 
 class ImageLinksSummarySerializer(NonNullModelSerializer):
@@ -58,8 +87,6 @@ class CategorySerializer(NonNullModelSerializer):
 class VolumeInfoSerializer(NonNullModelSerializer):
     categories = serializers.ListSerializer(child=serializers.CharField(max_length=100))
     authors = serializers.ListSerializer(child=serializers.CharField(max_length=100))
-    # categories = CategorySerializer(many=True, required=False)
-    # authors = AuthorSerializer(many=True, required=False)
     industryIdentifier = IndustryIdentifierSerializer(required=False)
     dimensions = DimensionsSerializer(required=False)
     readingModes = ReadingModesSerializer(required=False)
@@ -74,7 +101,7 @@ class VolumeInfoSerializer(NonNullModelSerializer):
 class DownloadAccessSerializer(NonNullModelSerializer):
     class Meta:
         model = DownloadAccess
-        exclude = ('accessInfo', )
+        exclude = ('accessInfo', 'id')
 
 
 class PdfSerializer(NonNullModelSerializer):
@@ -109,16 +136,18 @@ class BookSerializer(NonNullModelSerializer):
     searchInfo = SearchInfoSerializer(required=False)
     accessInfo = AccessInfoSerializer(required=False)
     volumeInfo = VolumeInfoSerializer(required=False)
+    saleInfo = SaleInfoSerializer(required=False)
 
     class Meta:
         model = Book
         fields = '__all__'
 
     def create(self, validated_data):
+
+        search_info_data = None
+
         if 'searchInfo' in validated_data:
             search_info_data = validated_data.pop('searchInfo')
-        else:
-            search_info_data = None
 
         volume_info_data = categories_data = authors_data = industry_identifiers_data = dimensions_data = None
         reading_modes_data = panelization_summary_data = image_links_data = None
@@ -151,6 +180,17 @@ class BookSerializer(NonNullModelSerializer):
             if 'downloadAccess' in access_info_data:
                 download_access_data = access_info_data.pop('downloadAccess')
 
+        sale_info_data = list_price_data = retail_price_data = offer_data = None
+
+        if 'saleInfo' in validated_data:
+            sale_info_data = validated_data.pop('saleInfo')
+            if 'listPrice' in sale_info_data:
+                list_price_data = sale_info_data.pop('listPrice')
+            if 'retailPrice' in sale_info_data:
+                retail_price_data = sale_info_data.pop('retailPrice')
+            if 'offer' in sale_info_data:
+                offer_data = sale_info_data.pop('offer')
+
         book = Book.objects.create(**validated_data)
 
         if search_info_data:
@@ -178,6 +218,7 @@ class BookSerializer(NonNullModelSerializer):
             if image_links_data:
                 ImageLinks.objects.create(volumeInfo=volume_info, **image_links_data)
             volume_info.save()
+
         if access_info_data:
             access_info = AccessInfo.objects.create(book=book, **access_info_data)
             if pdf_data:
@@ -186,4 +227,14 @@ class BookSerializer(NonNullModelSerializer):
                 Epub.objects.create(accessInfo=access_info, **epub_data)
             if download_access_data:
                 DownloadAccess.objects.create(accessInfo=access_info, **download_access_data)
+
+        if sale_info_data:
+            sale_info = SaleInfo.objects.create(book=book, **sale_info_data)
+            if list_price_data:
+                ListPrice.objects.create(saleInfo=sale_info, **list_price_data)
+            if retail_price_data:
+                RetailPrice.objects.create(saleInfo=sale_info, **retail_price_data)
+            if offer_data:
+                Offer.objects.create(saleInfo=sale_info, **offer_data)
+
         return book
