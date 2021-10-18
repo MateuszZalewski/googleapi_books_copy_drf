@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # installed libs
     'rest_framework',
+    'django_filters',
     # my apps
     'books',
 ]
@@ -111,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 REST_FRAMEWORK = {
-    'ORDERING_PARAM': 'sort'
+    'ORDERING_PARAM': 'sort',
 }
 
 
