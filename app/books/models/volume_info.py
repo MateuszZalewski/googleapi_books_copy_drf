@@ -25,7 +25,7 @@ class VolumeInfo(models.Model):
     subtitle = models.TextField(null=True)
     authors = models.ManyToManyField(Author, related_name='authors')
     publisher = models.CharField(max_length=100, null=True)
-    publishedDate = models.CharField(max_length=100, null=True)
+    publishedDate = models.CharField(max_length=10, null=True)
     description = models.TextField(null=True)
     pageCount = models.IntegerField(null=True)
     printType = models.CharField(max_length=100, null=True)

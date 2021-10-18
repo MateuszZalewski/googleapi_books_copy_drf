@@ -8,7 +8,7 @@ class SaleInfo(models.Model):
     saleability = models.CharField(max_length=100, null=True)
     isEbook = models.BooleanField()
     buyLink = models.URLField(null=True)
-    onSaleDate = models.DateTimeField(null=True)
+    onSaleDate = models.DateField(null=True)
 
 
 class RetailPrice(models.Model):
