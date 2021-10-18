@@ -85,8 +85,8 @@ class CategorySerializer(NonNullModelSerializer):
 
 
 class VolumeInfoSerializer(NonNullModelSerializer):
-    categories = serializers.ListSerializer(child=serializers.CharField(max_length=100))
-    authors = serializers.ListSerializer(child=serializers.CharField(max_length=100))
+    categories = serializers.ListSerializer(child=serializers.CharField(max_length=100), required=False)
+    authors = serializers.ListSerializer(child=serializers.CharField(max_length=100), required=False)
     industryIdentifier = IndustryIdentifierSerializer(required=False)
     dimensions = DimensionsSerializer(required=False)
     readingModes = ReadingModesSerializer(required=False)
