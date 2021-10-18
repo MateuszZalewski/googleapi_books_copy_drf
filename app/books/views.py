@@ -1,22 +1,35 @@
-from rest_framework import viewsets, filters, status
-import django_filters.rest_framework
+from rest_framework import viewsets, status
+from rest_framework import filters as drf_filters
 from rest_framework.response import Response
+
+from django_filters import rest_framework as df_filters
+from django.forms import MultipleChoiceField
 
 from .models import Book
 from .serializers import BookSerializer
 
 
-class BookFilter(django_filters.rest_framework.FilterSet):
-    published_date = django_filters.rest_framework.CharFilter(field_name="volumeInfo__publishedDate", lookup_expr='startswith')
+class MultipleField(MultipleChoiceField):
+    def valid_value(self, value):
+        return True
+
+
+class MultipleFilter(df_filters.MultipleChoiceFilter):
+    field_class = MultipleField
+
+
+class BookFilter(df_filters.FilterSet):
+    published_date = df_filters.CharFilter(field_name="volumeInfo__publishedDate", lookup_expr='startswith')
+    author = MultipleFilter(field_name='volumeInfo__authors__fullName', lookup_expr='icontains')
 
     class Meta:
         model = Book
-        fields = ('published_date', )
+        fields = ('published_date', 'author')
 
 
 class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
-    filter_backends = (filters.OrderingFilter, django_filters.rest_framework.DjangoFilterBackend)
+    filter_backends = (drf_filters.OrderingFilter, df_filters.DjangoFilterBackend)
     ordering_fields = ('volumeInfo__publishedDate',)
     filterset_class = BookFilter
 
