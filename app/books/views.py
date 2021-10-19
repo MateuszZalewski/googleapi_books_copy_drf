@@ -36,15 +36,15 @@ class BookViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         data = request.data.get('items', request.data)
         many = isinstance(data, list)
-        print (data, many)
+        print(data, many)
         serializer = self.get_serializer(data=data, many=many)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(
-                serializer.data,
-                status=status.HTTP_201_CREATED,
-                headers=headers
+            serializer.data,
+            status=status.HTTP_201_CREATED,
+            headers=headers
         )
 
     def get_queryset(self):
