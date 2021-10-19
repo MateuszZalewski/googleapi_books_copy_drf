@@ -19,8 +19,8 @@ class MultipleFilter(df_filters.MultipleChoiceFilter):
 
 
 class BookFilter(df_filters.FilterSet):
-    published_date = df_filters.CharFilter(field_name="volumeInfo__publishedDate", lookup_expr='startswith')
-    author = MultipleFilter(field_name='volumeInfo__authors__fullName', lookup_expr='icontains')
+    published_date = MultipleFilter(field_name="published_date", lookup_expr='startswith')
+    author = MultipleFilter(field_name='authors__fullName', lookup_expr='icontains')
 
     class Meta:
         model = Book
@@ -30,7 +30,7 @@ class BookFilter(df_filters.FilterSet):
 class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     filter_backends = (drf_filters.OrderingFilter, df_filters.DjangoFilterBackend)
-    ordering_fields = ('volumeInfo__publishedDate',)
+    ordering_fields = ('published_date',)
     filterset_class = BookFilter
 
     def create(self, request, *args, **kwargs):
