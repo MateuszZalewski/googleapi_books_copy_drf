@@ -133,14 +133,36 @@ class SearchInfoSerializer(NonNullModelSerializer):
 
 
 class BookSerializer(NonNullModelSerializer):
-    searchInfo = SearchInfoSerializer(required=False)
-    accessInfo = AccessInfoSerializer(required=False)
     volumeInfo = VolumeInfoSerializer(required=False)
+    accessInfo = AccessInfoSerializer(required=False)
     saleInfo = SaleInfoSerializer(required=False)
+    searchInfo = SearchInfoSerializer(required=False)
+
+    def to_representation(self, instance):
+        # raise ValueError(dir(instance.volumeInfo.authors))
+        representation = {'id': instance.id, 'title': instance.volumeInfo.title,
+                          'published_date':instance.volumeInfo.publishedDate,
+                          'average_rating': instance.volumeInfo.averageRating,
+                          'ratings_count': instance.volumeInfo.ratingsCount,
+                          }
+        authors = []
+        for author in instance.volumeInfo.authors.values():
+            authors.append(author['fullName'])
+        representation['authors'] = authors
+
+        categories = []
+        for category in instance.volumeInfo.categories.values():
+            categories.append(category['name'])
+        representation['categories'] = categories
+        if ImageLinks.objects.filter(volumeInfo=instance.volumeInfo):
+            representation['thumbnail'] = instance.volumeInfo.imagelinks.thumbnail
+
+        return representation
 
     class Meta:
         model = Book
         fields = '__all__'
+        # fields = ('id', 'title', 'authors', 'published_date', 'categories', 'average_rating', 'ratings_count', 'thumbnail')
 
     def create(self, validated_data):
 
