@@ -144,52 +144,26 @@ class BookSerializer(NonNullModelSerializer):
 
     def create(self, validated_data):
 
-        search_info_data = None
+        search_info_data = validated_data.pop('searchInfo', None)
 
-        if 'searchInfo' in validated_data:
-            search_info_data = validated_data.pop('searchInfo')
+        volume_info_data = validated_data.pop('volumeInfo', {})
+        categories_data = volume_info_data.pop('categories', None)
+        authors_data = volume_info_data.pop('authors', None)
+        industry_identifiers_data = volume_info_data.pop('industryIdentifiers', None)
+        dimensions_data = volume_info_data.pop('dimensions', None)
+        reading_modes_data = volume_info_data.pop('readingModes', None)
+        panelization_summary_data = volume_info_data.pop('panelizationSummary', None)
+        image_links_data = volume_info_data.pop('imageLinks', None)
 
-        volume_info_data = categories_data = authors_data = industry_identifiers_data = dimensions_data = None
-        reading_modes_data = panelization_summary_data = image_links_data = None
+        access_info_data = validated_data.pop('accessInfo', {})
+        pdf_data = access_info_data.pop('pdf', None)
+        epub_data = access_info_data.pop('epub', None)
+        download_access_data = access_info_data.pop('downloadAccess', None)
 
-        if 'volumeInfo' in validated_data:
-            volume_info_data = validated_data.pop('volumeInfo')
-            if 'categories' in volume_info_data:
-                categories_data = volume_info_data.pop('categories')
-            if 'authors' in volume_info_data:
-                authors_data = volume_info_data.pop('authors')
-            if 'industryIdentifiers' in volume_info_data:
-                industry_identifiers_data = volume_info_data.pop('industryIdentifiers')
-            if 'dimensions' in volume_info_data:
-                dimensions_data = volume_info_data.pop('dimensions')
-            if 'readingModes' in volume_info_data:
-                reading_modes_data = volume_info_data.pop('readingModes')
-            if 'panelizationSummary' in volume_info_data:
-                panelization_summary_data = volume_info_data.pop('panelizationSummary')
-            if 'imageLinks' in volume_info_data:
-                image_links_data = volume_info_data.pop('imageLinks')
-
-        access_info_data = pdf_data = epub_data = download_access_data = None
-
-        if 'accessInfo' in validated_data:
-            access_info_data = validated_data.pop('accessInfo')
-            if 'pdf' in access_info_data:
-                pdf_data = access_info_data.pop('pdf')
-            if 'epub' in access_info_data:
-                epub_data = access_info_data.pop('epub')
-            if 'downloadAccess' in access_info_data:
-                download_access_data = access_info_data.pop('downloadAccess')
-
-        sale_info_data = list_price_data = retail_price_data = offer_data = None
-
-        if 'saleInfo' in validated_data:
-            sale_info_data = validated_data.pop('saleInfo')
-            if 'listPrice' in sale_info_data:
-                list_price_data = sale_info_data.pop('listPrice')
-            if 'retailPrice' in sale_info_data:
-                retail_price_data = sale_info_data.pop('retailPrice')
-            if 'offer' in sale_info_data:
-                offer_data = sale_info_data.pop('offer')
+        sale_info_data = validated_data.pop('saleInfo', {})
+        list_price_data = sale_info_data.pop('listPrice', None)
+        retail_price_data = sale_info_data.pop('retailPrice', None)
+        offer_data = sale_info_data.pop('offer', None)
 
         book = Book.objects.create(**validated_data)
 
