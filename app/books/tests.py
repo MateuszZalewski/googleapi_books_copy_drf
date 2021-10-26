@@ -1,11 +1,45 @@
+import json
 from rest_framework import status
-from rest_framework.test import APITestCase
-from django.test import Client
+from rest_framework.test import APITestCase, APIClient
 from django.urls import reverse
 from .models import Book
 from .serializers import BookSerializer
 
-client = Client()
+client = APIClient()
+
+
+class CreateNewBookTest(APITestCase):
+    """ Test for creating new book API """
+
+    def setUp(self) -> None:
+        self.invalid_payload = {
+            'kind': 'books#volume',
+            'id': '',
+            'etag': 'VZExkpZl+ak',
+            'selfLink': 'https://www.googleapis.com/books/v1/volumes/rToaogEACAAJ',
+        }
+        self.valid_payload = {
+            'kind': 'books#volume',
+            'id': 'rToaogEACAAJ',
+            'etag': 'VZExkpZl+ak',
+            'selfLink': 'https://www.googleapis.com/books/v1/volumes/rToaogEACAAJ',
+        }
+
+    def test_create_valid_book(self):
+        response = client.post(
+            reverse('books-list'),
+            data=json.dumps(self.valid_payload),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_create_invalid_book(self):
+        response = client.post(
+            reverse('books-list'),
+            data=json.dumps(self.invalid_payload),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
 class GetAllBooksTest(APITestCase):
