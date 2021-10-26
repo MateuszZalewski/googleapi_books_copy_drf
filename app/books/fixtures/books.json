@@ -1,0 +1,1273 @@
+[
+{
+  "model": "books.book",
+  "pk": "2SYREAAAQBAJ",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "0RuskS8sTCI",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/2SYREAAAQBAJ"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "AcWSMQEACAAJ",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "m5AAJcDYQBI",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/AcWSMQEACAAJ"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "DqLPAAAAMAAJ",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "bTA4oO+4WIc",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/DqLPAAAAMAAJ"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "J6XAswEACAAJ",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "QbQgLR220Vc",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/J6XAswEACAAJ"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "QSUREAAAQBAJ",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "a2r90DxpV9o",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/QSUREAAAQBAJ"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "Wbm1mQEACAAJ",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "g4aWN5k6S5A",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/Wbm1mQEACAAJ"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "k0yjswEACAAJ",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "SnuBKL7dZK8",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/k0yjswEACAAJ"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "pD6arNyKyi8C",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "beV/CkJMQho",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/pD6arNyKyi8C"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "rIqOaeTx074C",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "u01Dgy87ER4",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/rIqOaeTx074C"
+  }
+},
+{
+  "model": "books.book",
+  "pk": "rToaogEACAAJ",
+  "fields": {
+    "kind": "books#volume",
+    "etag": "DuZaonWy9wE",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/rToaogEACAAJ"
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 1,
+  "fields": {
+    "book": "rToaogEACAAJ",
+    "country": "PL",
+    "viewability": "NO_PAGES",
+    "accessViewStatus": "NONE",
+    "embeddable": false,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=rToaogEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 2,
+  "fields": {
+    "book": "J6XAswEACAAJ",
+    "country": "PL",
+    "viewability": "NO_PAGES",
+    "accessViewStatus": "NONE",
+    "embeddable": false,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=J6XAswEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 3,
+  "fields": {
+    "book": "AcWSMQEACAAJ",
+    "country": "PL",
+    "viewability": "NO_PAGES",
+    "accessViewStatus": "NONE",
+    "embeddable": false,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=AcWSMQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 4,
+  "fields": {
+    "book": "DqLPAAAAMAAJ",
+    "country": "PL",
+    "viewability": "NO_PAGES",
+    "accessViewStatus": "NONE",
+    "embeddable": false,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=DqLPAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 5,
+  "fields": {
+    "book": "QSUREAAAQBAJ",
+    "country": "PL",
+    "viewability": "PARTIAL",
+    "accessViewStatus": "SAMPLE",
+    "embeddable": true,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=QSUREAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 6,
+  "fields": {
+    "book": "2SYREAAAQBAJ",
+    "country": "PL",
+    "viewability": "PARTIAL",
+    "accessViewStatus": "SAMPLE",
+    "embeddable": true,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=2SYREAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 7,
+  "fields": {
+    "book": "k0yjswEACAAJ",
+    "country": "PL",
+    "viewability": "NO_PAGES",
+    "accessViewStatus": "NONE",
+    "embeddable": false,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=k0yjswEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 8,
+  "fields": {
+    "book": "rIqOaeTx074C",
+    "country": "PL",
+    "viewability": "PARTIAL",
+    "accessViewStatus": "SAMPLE",
+    "embeddable": false,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=rIqOaeTx074C&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 9,
+  "fields": {
+    "book": "pD6arNyKyi8C",
+    "country": "PL",
+    "viewability": "PARTIAL",
+    "accessViewStatus": "SAMPLE",
+    "embeddable": true,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=pD6arNyKyi8C&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.accessinfo",
+  "pk": 10,
+  "fields": {
+    "book": "Wbm1mQEACAAJ",
+    "country": "PL",
+    "viewability": "NO_PAGES",
+    "accessViewStatus": "NONE",
+    "embeddable": false,
+    "publicDomain": false,
+    "webReaderLink": "http://play.google.com/books/reader?id=Wbm1mQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+    "textToSpeechPermission": "ALLOWED",
+    "quoteSharingAllowed": false
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 1,
+  "fields": {
+    "accessInfo": 1,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 2,
+  "fields": {
+    "accessInfo": 2,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 3,
+  "fields": {
+    "accessInfo": 3,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 4,
+  "fields": {
+    "accessInfo": 4,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 5,
+  "fields": {
+    "accessInfo": 5,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 6,
+  "fields": {
+    "accessInfo": 6,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 7,
+  "fields": {
+    "accessInfo": 7,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 8,
+  "fields": {
+    "accessInfo": 8,
+    "downloadLink": null,
+    "acsTokenLink": "http://books.google.pl/books/download/The_Hobbit_Enhanced_Edition-sample-epub.acsm?id=rIqOaeTx074C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
+    "isAvailable": true
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 9,
+  "fields": {
+    "accessInfo": 9,
+    "downloadLink": null,
+    "acsTokenLink": "http://books.google.pl/books/download/The_Hobbit-sample-epub.acsm?id=pD6arNyKyi8C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
+    "isAvailable": true
+  }
+},
+{
+  "model": "books.epub",
+  "pk": 10,
+  "fields": {
+    "accessInfo": 10,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 1,
+  "fields": {
+    "accessInfo": 1,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 2,
+  "fields": {
+    "accessInfo": 2,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 3,
+  "fields": {
+    "accessInfo": 3,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 4,
+  "fields": {
+    "accessInfo": 4,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 5,
+  "fields": {
+    "accessInfo": 5,
+    "downloadLink": null,
+    "acsTokenLink": "http://books.google.pl/books/download/LEGO_The_Hobbit-sample-pdf.acsm?id=QSUREAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
+    "isAvailable": true
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 6,
+  "fields": {
+    "accessInfo": 6,
+    "downloadLink": null,
+    "acsTokenLink": "http://books.google.pl/books/download/The_Hobbit-sample-pdf.acsm?id=2SYREAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
+    "isAvailable": true
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 7,
+  "fields": {
+    "accessInfo": 7,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 8,
+  "fields": {
+    "accessInfo": 8,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 9,
+  "fields": {
+    "accessInfo": 9,
+    "downloadLink": null,
+    "acsTokenLink": "http://books.google.pl/books/download/The_Hobbit-sample-pdf.acsm?id=pD6arNyKyi8C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
+    "isAvailable": true
+  }
+},
+{
+  "model": "books.pdf",
+  "pk": 10,
+  "fields": {
+    "accessInfo": 10,
+    "downloadLink": null,
+    "acsTokenLink": null,
+    "isAvailable": false
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 1,
+  "fields": {
+    "book": "rToaogEACAAJ",
+    "country": "PL",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false,
+    "buyLink": null,
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 2,
+  "fields": {
+    "book": "J6XAswEACAAJ",
+    "country": "PL",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false,
+    "buyLink": null,
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 3,
+  "fields": {
+    "book": "AcWSMQEACAAJ",
+    "country": "PL",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false,
+    "buyLink": null,
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 4,
+  "fields": {
+    "book": "DqLPAAAAMAAJ",
+    "country": "PL",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false,
+    "buyLink": null,
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 5,
+  "fields": {
+    "book": "QSUREAAAQBAJ",
+    "country": "PL",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "buyLink": "https://play.google.com/store/books/details?id=QSUREAAAQBAJ&rdid=book-QSUREAAAQBAJ&rdot=1&source=gbs_api",
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 6,
+  "fields": {
+    "book": "2SYREAAAQBAJ",
+    "country": "PL",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "buyLink": "https://play.google.com/store/books/details?id=2SYREAAAQBAJ&rdid=book-2SYREAAAQBAJ&rdot=1&source=gbs_api",
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 7,
+  "fields": {
+    "book": "k0yjswEACAAJ",
+    "country": "PL",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false,
+    "buyLink": null,
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 8,
+  "fields": {
+    "book": "rIqOaeTx074C",
+    "country": "PL",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false,
+    "buyLink": null,
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 9,
+  "fields": {
+    "book": "pD6arNyKyi8C",
+    "country": "PL",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false,
+    "buyLink": null,
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.saleinfo",
+  "pk": 10,
+  "fields": {
+    "book": "Wbm1mQEACAAJ",
+    "country": "PL",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false,
+    "buyLink": null,
+    "onSaleDate": null
+  }
+},
+{
+  "model": "books.retailprice",
+  "pk": 1,
+  "fields": {
+    "saleInfo": 5,
+    "amount": "9.45",
+    "currencyCode": "PLN"
+  }
+},
+{
+  "model": "books.retailprice",
+  "pk": 2,
+  "fields": {
+    "saleInfo": 6,
+    "amount": "9.68",
+    "currencyCode": "PLN"
+  }
+},
+{
+  "model": "books.listprice",
+  "pk": 1,
+  "fields": {
+    "saleInfo": 5,
+    "amount": "9.45",
+    "currencyCode": "PLN"
+  }
+},
+{
+  "model": "books.listprice",
+  "pk": 2,
+  "fields": {
+    "saleInfo": 6,
+    "amount": "9.68",
+    "currencyCode": "PLN"
+  }
+},
+{
+  "model": "books.searchinfo",
+  "pk": 1,
+  "fields": {
+    "book": "QSUREAAAQBAJ",
+    "textSnippet": "┼Ür├│dziemie - Wa┼╝ne lokacje LEGO The <b>Hobbit</b> Wa┼╝ne lokacje GA A A EREBOT Erebor A πéèτëê ARNOR man High Fells 7 . Dale 41 DALE RIVENDELEA Rivendell INS Szlak g├│rski Sala z minizestawami Las sosnowy Miasto na Jeziorze ( Lake - town ) O&nbsp;..."
+  }
+},
+{
+  "model": "books.searchinfo",
+  "pk": 2,
+  "fields": {
+    "book": "2SYREAAAQBAJ",
+    "textSnippet": "01 ΓÇô An Unexpected Party Zaczynasz w swoim domku w <b>Hobbitonie</b>. Id┼║ do pokoju, bior─àc po drodze czerwony kryszta┼é (odpowiada on za punkty odwagi). Otw├│rz kufer i we┼║ swoj─à lask─Ö. Wyjd┼║ na zewn─àtrz przez drzwi za Gandalfem i zapisz gr─Ö&nbsp;..."
+  }
+},
+{
+  "model": "books.searchinfo",
+  "pk": 3,
+  "fields": {
+    "book": "rIqOaeTx074C",
+    "textSnippet": "Exclusive to this Enhanced version of the eBook are recently discovered audio recordings by J.R.R. Tolkien, and new high-resolution colour images of all of TolkienΓÇÖs illustrations for the book, many of which are also included in their ..."
+  }
+},
+{
+  "model": "books.searchinfo",
+  "pk": 4,
+  "fields": {
+    "book": "pD6arNyKyi8C",
+    "textSnippet": ". . All those, young or old, who love a fine adventurous tale, beautifully told, will take The Hobbit to their hearts.ΓÇ¥ ΓÇô New York Times Book Review"
+  }
+},
+{
+  "model": "books.searchinfo",
+  "pk": 5,
+  "fields": {
+    "book": "Wbm1mQEACAAJ",
+    "textSnippet": "Bilbo Baggins, a respectable, well-to-do hobbit, lives comfortably in his hobbit-hole until the day the wandering wizard Gandalf chooses him to take part in an adventure from which he may never return."
+  }
+},
+{
+  "model": "books.author",
+  "pk": 1,
+  "fields": {
+    "fullName": "J. R. R. Tolkien"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 2,
+  "fields": {
+    "fullName": "J. R. R. Tolkien"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 3,
+  "fields": {
+    "fullName": "J. R. R. Tolkien"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 4,
+  "fields": {
+    "fullName": "John Ronald Reuel Tolkien"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 5,
+  "fields": {
+    "fullName": "Jacek Ha┼éas"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 6,
+  "fields": {
+    "fullName": "Artur D─àbrowski"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 7,
+  "fields": {
+    "fullName": "J. R. R. Tolkien"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 8,
+  "fields": {
+    "fullName": "J. R. R. Tolkien"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 9,
+  "fields": {
+    "fullName": "J.R.R. Tolkien"
+  }
+},
+{
+  "model": "books.author",
+  "pk": 10,
+  "fields": {
+    "fullName": "J. R. R. Tolkien"
+  }
+},
+{
+  "model": "books.category",
+  "pk": 1,
+  "fields": {
+    "name": "Fiction"
+  }
+},
+{
+  "model": "books.category",
+  "pk": 2,
+  "fields": {
+    "name": "Baggins, Bilbo (Fictitious character)"
+  }
+},
+{
+  "model": "books.category",
+  "pk": 3,
+  "fields": {
+    "name": "Computers"
+  }
+},
+{
+  "model": "books.category",
+  "pk": 4,
+  "fields": {
+    "name": "Computers"
+  }
+},
+{
+  "model": "books.category",
+  "pk": 5,
+  "fields": {
+    "name": "Fiction"
+  }
+},
+{
+  "model": "books.category",
+  "pk": 6,
+  "fields": {
+    "name": "Young Adult Fiction"
+  }
+},
+{
+  "model": "books.category",
+  "pk": 7,
+  "fields": {
+    "name": "Fiction"
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 1,
+  "fields": {
+    "book": "rToaogEACAAJ",
+    "title": "Hobbit czyli tam i z powrotem",
+    "subtitle": null,
+    "publisher": null,
+    "publishedDate": "2015-01",
+    "description": null,
+    "pageCount": 320,
+    "printType": "BOOK",
+    "averageRating": 5.0,
+    "ratingsCount": 1,
+    "contentVersion": "preview-1.0.0",
+    "language": "pl",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=rToaogEACAAJ&dq=hobbit&hl=&cd=1&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "infoLink": "http://books.google.pl/books?id=rToaogEACAAJ&dq=hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hobbit_czyli_tam_i_z_powrotem.html?hl=&id=rToaogEACAAJ",
+    "authors": [
+      1
+    ],
+    "categories": []
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 2,
+  "fields": {
+    "book": "J6XAswEACAAJ",
+    "title": "Hobbit",
+    "subtitle": null,
+    "publisher": null,
+    "publishedDate": "2018",
+    "description": null,
+    "pageCount": 304,
+    "printType": "BOOK",
+    "averageRating": null,
+    "ratingsCount": null,
+    "contentVersion": "preview-1.0.0",
+    "language": "pl",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=J6XAswEACAAJ&dq=hobbit&hl=&cd=2&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "infoLink": "http://books.google.pl/books?id=J6XAswEACAAJ&dq=hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hobbit.html?hl=&id=J6XAswEACAAJ",
+    "authors": [
+      2
+    ],
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 3,
+  "fields": {
+    "book": "AcWSMQEACAAJ",
+    "title": "Hobbit czyli tam i z powrotem",
+    "subtitle": null,
+    "publisher": null,
+    "publishedDate": "2012-01",
+    "description": null,
+    "pageCount": 280,
+    "printType": "BOOK",
+    "averageRating": null,
+    "ratingsCount": null,
+    "contentVersion": "preview-1.0.0",
+    "language": "pl",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=AcWSMQEACAAJ&dq=hobbit&hl=&cd=3&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "infoLink": "http://books.google.pl/books?id=AcWSMQEACAAJ&dq=hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hobbit_czyli_tam_i_z_powrotem.html?hl=&id=AcWSMQEACAAJ",
+    "authors": [
+      3
+    ],
+    "categories": [
+      2
+    ]
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 4,
+  "fields": {
+    "book": "DqLPAAAAMAAJ",
+    "title": "Hobbit czyli Tam i z powrotem",
+    "subtitle": null,
+    "publisher": null,
+    "publishedDate": "1985",
+    "description": null,
+    "pageCount": 233,
+    "printType": "BOOK",
+    "averageRating": null,
+    "ratingsCount": null,
+    "contentVersion": "1.2.3.0.preview.0",
+    "language": "pl",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=DqLPAAAAMAAJ&q=hobbit&dq=hobbit&hl=&cd=4&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "infoLink": "http://books.google.pl/books?id=DqLPAAAAMAAJ&dq=hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hobbit_czyli_Tam_i_z_powrotem.html?hl=&id=DqLPAAAAMAAJ",
+    "authors": [
+      4
+    ],
+    "categories": []
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 5,
+  "fields": {
+    "book": "QSUREAAAQBAJ",
+    "title": "LEGO The Hobbit",
+    "subtitle": null,
+    "publisher": "Litres",
+    "publishedDate": "2021-10-02",
+    "description": "Poradnik LEGO The Hobbit ΓÇô Opis przej┼¢cia, znajd┼║ki, sekrety stanowi kompletny przewodnik po zbudowanej z klock├│w wersji Tolkienowskiego ┼Ür├│dziemia. Powinien on okaza─ç si─Ö pomocny w uko┼äczeniu g┼é├│wnych i opcjonalnych etap├│w gry, a tak┼╝e w odnalezieniu wszystkich skrz─Ötnie poukrywanych znajdziek i skarb├│w. Poradnik podzielony zosta┼é na kilka r├│┼╝nych rozdzia┼é├│w. Pierwszy rozdzia┼é jest jednym z najobszerniejszych, zawieraj─àc bardzo szczeg├│┼éowy i bogato ilustrowany opis przej┼¢cia wszystkich szesnastu etap├│w trybu fabularnego gry. W nast─Öpnym rozdziale znalaz┼éy si─Ö informacje na temat sekret├│w odnajdywanych w g┼é├│wnych etapach. Trzeci rozdzia┼é koncentruje si─Ö na opisach przej┼¢cia zada┼ä pobocznych, kt├│rych w grze LEGO The Hobbit jest istne zastrz─Ösienie. Kilka kolejnych rozdzia┼é├│w niniejszego poradnika dotyczy w ca┼éo┼¢ci atrakcji czekaj─àcych na graczy w ┼Ür├│dziemiu, po kt├│rym w przerwach pomi─Ödzy g┼é├│wnymi etapami mo┼╝na si─Ö swobodnie przemieszcza─ç. Mowa tu przede wszystkim o schematach, mithrilowych klockach LEGO oraz nowych grywalnych postaciach, kt├│re mo┼╝na rekrutowa─ç w trakcie rozgrywki. Warto odnotowa─ç, ┼╝e do wi─Ökszo┼¢ci rozdzia┼é├│w powi─àzanych ze ┼Ür├│dziemiem do┼é─àczono mapy ┼¢wiata w wysokiej jako┼¢ci, kt├│re powinny okaza─ç si─Ö pomocne w poprawnej nawigacji. W ko┼äcowej cz─Ö┼¢ci poradnika znajduj─à si─Ö trzy mniejsze rozdzia┼éy. Zwi─àzane s─à one z zaliczeniem bonusowego poziomu, wymaganiami do uko┼äczenia gry w stu procentach oraz odblokowaniem wszystkich osi─àgni─Ö─ç. LEGO The Hobbit to kolejna produkcja studia Traveller's Tales, w kt├│rej przemieszczamy si─Ö po ┼¢rodowisku zbudowanym w ca┼éo┼¢ci z tytu┼éowych klock├│w. Produkcja ta nawi─àzuje do powie┼¢ci J.R.R. Tolkiena oraz do powsta┼éej na jej bazie filmowej trylogii Petera Jacksona. Poradnik LEGO The Hobbit ΓÇô Opis przej┼¢cia, znajd┼║ki i sekrety zawiera: Szczeg├│┼éowy opis przej┼¢cia wszystkich etap├│w trybu fabularnego gry; Informacje na temat lokalizacji sekret├│w odnajdywanych w g┼é├│wnych etapach gry; Szczeg├│┼éowy opis przej┼¢cia ponad stu zada┼ä pobocznych; Zestawienie wszystkich atrakcji dost─Öpnych w trakcie swobodnej eksploracji ┼Ür├│dziemia; Informacje na temat lokalizacji schemat├│w i mithrilowych klock├│w LEGO na mapie ┼¢wiata; Zestawienie wszystkich grywalnych postaci; Opis odblokowania i przej┼¢cia tajnego poziomu; Informacje na temat wymaga┼ä do zaliczenia gry w 100 procentach; Informacje na temat odblokowywania osi─àgni─Ö─ç. Poradnik do gry LEGO The Hobbit stanowi dok┼éadny, bogato ilustrowany opis przej┼¢cia, dzi─Öki kt├│remu odnalezienie wszystkich sekret├│w i uko┼äczenie gry w 100% nie b─Ödzie stanowi┼éo najmniejszego problemu. Ponadto ΓÇô opisane zosta┼éy wszystkie osi─àgni─Öcia gry. LEGO The Hobbit ΓÇô opis przej┼¢cia, znajd┼║ki i sekrety zawiera poszukiwane przez graczy tematy i lokacje jak m.in. Etap 1 (Greatest Kingdom in Middle-Earth) (G┼é├│wne etapy ΓÇô Sekrety) Czerwone pytajniki (┼Ür├│dziemie ΓÇô Zadania poboczne) Etap 1 (Greatest Kingdom in Middle-Earth) ΓÇô Wn─Ötrze Samotnej G├│ry (Opis przej┼¢cia gry) Bia┼ée pytajniki ΓÇô opisy przej┼¢cia zada┼ä (1-20) (┼Ür├│dziemie ΓÇô Zadania poboczne) Etap 16 (Inside Information) ΓÇô Pokonanie Smauga (Opis przej┼¢cia gry) G┼é├│wne etapy ΓÇô Sekrety Mapa (┼Ür├│dziemie ΓÇô Mithrilowe klocki LEGO) Mapa (┼Ür├│dziemie ΓÇô Schematy) Odnajdywanie schemat├│w (1-8) (┼Ür├│dziemie ΓÇô Schematy) Etap 14 (The Necromancer) (G┼é├│wne etapy ΓÇô Sekrety)",
+    "pageCount": null,
+    "printType": "BOOK",
+    "averageRating": null,
+    "ratingsCount": null,
+    "contentVersion": "0.14.0.0.preview.1",
+    "language": "pl",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=QSUREAAAQBAJ&pg=PA680&dq=hobbit&hl=&cd=5&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "infoLink": "https://play.google.com/store/books/details?id=QSUREAAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=QSUREAAAQBAJ",
+    "authors": [
+      5
+    ],
+    "categories": [
+      3
+    ]
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 6,
+  "fields": {
+    "book": "2SYREAAAQBAJ",
+    "title": "The Hobbit",
+    "subtitle": null,
+    "publisher": "Litres",
+    "publishedDate": "2021-09-18",
+    "description": "ΓÇ₧The HobbitΓÇ¥ opowiada o wydarzeniach, kt├│re mia┼éy miejsce przed rozpocz─Öciem si─Ö trylogii ΓÇ₧W┼éadca Pier┼¢cieniΓÇ¥. W poradniku znajdziecie informacje o postaciach wyst─Öpuj─àcych w grze oraz jej dok┼éadny opis przej┼¢cia. The Hobbit ΓÇô poradnik do gry zawiera poszukiwane przez graczy tematy i lokacje jak m.in. Postacie ΓÇô Krasnoludowie 03 ΓÇô Troll-Hole Postacie ΓÇô G┼é├│wne Postacie ΓÇô Elfowie 01 ΓÇô An Unexpected Party cz.1 Postacie ΓÇô Wrogowie Postacie ΓÇô Ludzie 00 ΓÇô Dream World 11 ΓÇô The Clouds Burst cz.2 Postacie ΓÇô Kreatury Informacja o grze The Hobbit jest przygodow─à gr─à akcji na motywach s┼éynnej powie┼¢ci J. R. R. Tolkiena, za kt├│rej stworzenie odpowiada ekipa deweloperska studia Amaze Entertainment. Gracz wciela si─Ö w hobbita Bilbo Bagginsa i razem z Gandalfem oraz dru┼╝yn─à krasnolud├│w wyrusza w pe┼én─à niebezpiecze┼ästw podr├│┼╝. Rozgrywka ┼é─àczy elementy charakterystyczne dla gier akcji, przygodowych, cRPG, zr─Öczno┼¢ciowych, logicznych, a nawet ┬½skradanek┬╗. Gra The Hobbit, ciep┼éo przyj─Öta zar├│wno przez krytyk├│w, jak i graczy, to przedstawiciel gatunku przygodowych gier akcji. Tytu┼é wydany zosta┼é w Polsce w 2004 roku i dost─Öpny jest na platformach: PC, GBA, GCN, PS2, XBX. Wersja j─Özykowa oficjalnie dystrybuowana na terenie kraju to: pe┼éna polska.",
+    "pageCount": null,
+    "printType": "BOOK",
+    "averageRating": null,
+    "ratingsCount": null,
+    "contentVersion": "0.14.0.0.preview.1",
+    "language": "pl",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=2SYREAAAQBAJ&pg=PA11&dq=hobbit&hl=&cd=6&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "infoLink": "https://play.google.com/store/books/details?id=2SYREAAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=2SYREAAAQBAJ",
+    "authors": [
+      6
+    ],
+    "categories": [
+      4
+    ]
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 7,
+  "fields": {
+    "book": "k0yjswEACAAJ",
+    "title": "Hobbit, czyli Tam i z powrotem",
+    "subtitle": null,
+    "publisher": null,
+    "publishedDate": "2017",
+    "description": null,
+    "pageCount": null,
+    "printType": "BOOK",
+    "averageRating": null,
+    "ratingsCount": null,
+    "contentVersion": "preview-1.0.0",
+    "language": "pl",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=k0yjswEACAAJ&dq=hobbit&hl=&cd=7&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "infoLink": "http://books.google.pl/books?id=k0yjswEACAAJ&dq=hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Hobbit_czyli_Tam_i_z_powrotem.html?hl=&id=k0yjswEACAAJ",
+    "authors": [
+      7
+    ],
+    "categories": []
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 8,
+  "fields": {
+    "book": "rIqOaeTx074C",
+    "title": "The Hobbit (Enhanced Edition)",
+    "subtitle": null,
+    "publisher": "HarperCollins UK",
+    "publishedDate": "2011-11-18",
+    "description": "Exclusive to this Enhanced version of the eBook are recently discovered audio recordings by J.R.R. Tolkien, and new high-resolution colour images of all of TolkienΓÇÖs illustrations for the book, many of which are also included in their earlier black-and-white versions and can be revealed by a simple swipe of the screen.",
+    "pageCount": 304,
+    "printType": "BOOK",
+    "averageRating": 4.5,
+    "ratingsCount": 24,
+    "contentVersion": "1.3.3.0.preview.2",
+    "language": "en",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=rIqOaeTx074C&printsec=frontcover&dq=hobbit&hl=&cd=8&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "infoLink": "http://books.google.pl/books?id=rIqOaeTx074C&dq=hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit_Enhanced_Edition.html?hl=&id=rIqOaeTx074C",
+    "authors": [
+      8
+    ],
+    "categories": [
+      5
+    ]
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 9,
+  "fields": {
+    "book": "pD6arNyKyi8C",
+    "title": "The Hobbit",
+    "subtitle": null,
+    "publisher": "Houghton Mifflin Harcourt",
+    "publishedDate": "2012-02-15",
+    "description": "A great modern classic and the prelude to The Lord of the Rings. Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum. ΓÇ£A glorious account of a magnificent adventure, filled with suspense and seasoned with a quiet humor that is irresistible . . . All those, young or old, who love a fine adventurous tale, beautifully told, will take The Hobbit to their hearts.ΓÇ¥ ΓÇô New York Times Book Review",
+    "pageCount": 288,
+    "printType": "BOOK",
+    "averageRating": 4.5,
+    "ratingsCount": 162,
+    "contentVersion": "1.14.13.0.preview.3",
+    "language": "en",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=pD6arNyKyi8C&printsec=frontcover&dq=hobbit&hl=&cd=9&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "infoLink": "http://books.google.pl/books?id=pD6arNyKyi8C&dq=hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit.html?hl=&id=pD6arNyKyi8C",
+    "authors": [
+      9
+    ],
+    "categories": [
+      6
+    ]
+  }
+},
+{
+  "model": "books.volumeinfo",
+  "pk": 10,
+  "fields": {
+    "book": "Wbm1mQEACAAJ",
+    "title": "The Hobbit: Illustrated Edition",
+    "subtitle": null,
+    "publisher": "Houghton Mifflin Harcourt",
+    "publishedDate": "2013",
+    "description": "Bilbo Baggins, a respectable, well-to-do hobbit, lives comfortably in his hobbit-hole until the day the wandering wizard Gandalf chooses him to take part in an adventure from which he may never return.",
+    "pageCount": 384,
+    "printType": "BOOK",
+    "averageRating": null,
+    "ratingsCount": null,
+    "contentVersion": "preview-1.0.0",
+    "language": "en",
+    "mainCategory": null,
+    "previewLink": "http://books.google.pl/books?id=Wbm1mQEACAAJ&dq=hobbit&hl=&cd=10&source=gbs_api",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "infoLink": "http://books.google.pl/books?id=Wbm1mQEACAAJ&dq=hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit_Illustrated_Edition.html?hl=&id=Wbm1mQEACAAJ",
+    "authors": [
+      10
+    ],
+    "categories": [
+      7
+    ]
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 1,
+  "fields": {
+    "volumeInfo": 1,
+    "text": false,
+    "image": false
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 2,
+  "fields": {
+    "volumeInfo": 2,
+    "text": false,
+    "image": false
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 3,
+  "fields": {
+    "volumeInfo": 3,
+    "text": false,
+    "image": false
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 4,
+  "fields": {
+    "volumeInfo": 4,
+    "text": false,
+    "image": false
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 5,
+  "fields": {
+    "volumeInfo": 5,
+    "text": false,
+    "image": true
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 6,
+  "fields": {
+    "volumeInfo": 6,
+    "text": false,
+    "image": true
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 7,
+  "fields": {
+    "volumeInfo": 7,
+    "text": false,
+    "image": false
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 8,
+  "fields": {
+    "volumeInfo": 8,
+    "text": true,
+    "image": false
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 9,
+  "fields": {
+    "volumeInfo": 9,
+    "text": true,
+    "image": true
+  }
+},
+{
+  "model": "books.readingmodes",
+  "pk": 10,
+  "fields": {
+    "volumeInfo": 10,
+    "text": false,
+    "image": false
+  }
+},
+{
+  "model": "books.panelizationsummary",
+  "pk": 1,
+  "fields": {
+    "volumeInfo": 2,
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  }
+},
+{
+  "model": "books.panelizationsummary",
+  "pk": 2,
+  "fields": {
+    "volumeInfo": 4,
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  }
+},
+{
+  "model": "books.panelizationsummary",
+  "pk": 3,
+  "fields": {
+    "volumeInfo": 5,
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  }
+},
+{
+  "model": "books.panelizationsummary",
+  "pk": 4,
+  "fields": {
+    "volumeInfo": 6,
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  }
+},
+{
+  "model": "books.panelizationsummary",
+  "pk": 5,
+  "fields": {
+    "volumeInfo": 7,
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  }
+},
+{
+  "model": "books.panelizationsummary",
+  "pk": 6,
+  "fields": {
+    "volumeInfo": 9,
+    "containsEpubBubbles": false,
+    "containsImageBubbles": false
+  }
+},
+{
+  "model": "books.imagelinks",
+  "pk": 1,
+  "fields": {
+    "volumeInfo": 4,
+    "thumbnail": "http://books.google.com/books/content?id=DqLPAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "small": null,
+    "medium": null,
+    "large": null,
+    "smallThumbnail": "http://books.google.com/books/content?id=DqLPAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "extraLarge": null
+  }
+},
+{
+  "model": "books.imagelinks",
+  "pk": 2,
+  "fields": {
+    "volumeInfo": 5,
+    "thumbnail": "http://books.google.com/books/content?id=QSUREAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "small": null,
+    "medium": null,
+    "large": null,
+    "smallThumbnail": "http://books.google.com/books/content?id=QSUREAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "extraLarge": null
+  }
+},
+{
+  "model": "books.imagelinks",
+  "pk": 3,
+  "fields": {
+    "volumeInfo": 6,
+    "thumbnail": "http://books.google.com/books/content?id=2SYREAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "small": null,
+    "medium": null,
+    "large": null,
+    "smallThumbnail": "http://books.google.com/books/content?id=2SYREAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "extraLarge": null
+  }
+},
+{
+  "model": "books.imagelinks",
+  "pk": 4,
+  "fields": {
+    "volumeInfo": 8,
+    "thumbnail": "http://books.google.com/books/content?id=rIqOaeTx074C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "small": null,
+    "medium": null,
+    "large": null,
+    "smallThumbnail": "http://books.google.com/books/content?id=rIqOaeTx074C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "extraLarge": null
+  }
+},
+{
+  "model": "books.imagelinks",
+  "pk": 5,
+  "fields": {
+    "volumeInfo": 9,
+    "thumbnail": "http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "small": null,
+    "medium": null,
+    "large": null,
+    "smallThumbnail": "http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "extraLarge": null
+  }
+},
+{
+  "model": "books.imagelinks",
+  "pk": 6,
+  "fields": {
+    "volumeInfo": 10,
+    "thumbnail": "http://books.google.com/books/content?id=Wbm1mQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "small": null,
+    "medium": null,
+    "large": null,
+    "smallThumbnail": "http://books.google.com/books/content?id=Wbm1mQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+    "extraLarge": null
+  }
+}
+]
