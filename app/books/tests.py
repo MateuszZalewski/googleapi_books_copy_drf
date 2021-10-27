@@ -8,6 +8,29 @@ from .serializers import BookSerializer
 client = APIClient()
 
 
+class DeleteBookTest(APITestCase):
+    """ Test deleting single book """
+    fixtures = ['books.json']
+
+    def test_delete_book_valid(self):
+        book = Book.objects.first()
+        count_before = Book.objects.count()
+        response = client.delete(
+            reverse('books-detail', kwargs={'pk': book.pk}))
+
+        self.assertEqual(Book.objects.count(), count_before-1)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_delete_book_invalid(self):
+        count_before = Book.objects.count()
+        response = client.delete(
+            reverse('books-detail', kwargs={'pk': 5}))
+
+        self.assertEqual(Book.objects.count(), count_before)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+
+
 class CreateNewBooksTest(APITestCase):
     """ Test creating multiple books at once API """
 
