@@ -2,10 +2,75 @@ import json
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 from django.urls import reverse
-from .models import Book
+from .models import Book, SearchInfo
 from .serializers import BookSerializer
 
 client = APIClient()
+
+
+class CreateNewBooksTest(APITestCase):
+    """ Test creating multiple books at once API """
+
+    def setUp(self) -> None:
+        self.invalid_payload = {
+            'items': [
+                {
+                    'kind': 'books#volume',
+                    'id': 'rToaogEACAAJ',
+                    'etag': 5,
+                    'selfLink': 'https://www.googleapis.com/books/v1/volumes/rToaogEACAAJ',
+                    "searchInfo": {
+                        "textSnippet": "Poradnik do gry Dragon Ball Z Kakarot to potężne kompendium wiedzy, "
+                                       "które ułatwi ci ukończenie gry i pozwoli odkryć wszystkie sekrety w grze. "
+                    }
+                },
+                {
+                    "kind": "books#volume",
+                    "id": "4qNgDgAAQBAJ",
+                    "etag": "bkFi7TmefBw",
+                    "selfLink": 12,
+                },
+            ],
+        }
+        self.valid_payload = {
+            'items': [
+                {
+                    'kind': 'books#volume',
+                    'id': 'rToaogEACAAJ',
+                    'etag': 'VZExkpZl+ak',
+                    'selfLink': 'https://www.googleapis.com/books/v1/volumes/rToaogEACAAJ',
+                    "searchInfo": {
+                        "textSnippet": "Poradnik do gry Dragon Ball Z Kakarot to potężne kompendium wiedzy, "
+                                       "które ułatwi ci ukończenie gry i pozwoli odkryć wszystkie sekrety w grze. "
+                    }
+                },
+                {
+                    "kind": "books#volume",
+                    "id": "4qNgDgAAQBAJ",
+                    "etag": "bkFi7TmefBw",
+                    "selfLink": "https://www.googleapis.com/books/v1/volumes/4qNgDgAAQBAJ",
+                },
+            ],
+        }
+
+    def test_create_books_valid(self):
+        response = client.post(
+            reverse('books-list'),
+            data=json.dumps(self.valid_payload),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Book.objects.count(), 2)
+        self.assertEqual(SearchInfo.objects.count(), 1)
+
+    def test_create_books_invalid(self):
+        response = client.post(
+            reverse('books-list'),
+            data=json.dumps(self.invalid_payload),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(Book.objects.count(), 0)
 
 
 class CreateNewBookTest(APITestCase):
@@ -25,21 +90,23 @@ class CreateNewBookTest(APITestCase):
             'selfLink': 'https://www.googleapis.com/books/v1/volumes/rToaogEACAAJ',
         }
 
-    def test_create_valid_book(self):
+    def test_create_book_valid(self):
         response = client.post(
             reverse('books-list'),
             data=json.dumps(self.valid_payload),
             content_type='application/json'
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Book.objects.count(), 1)
 
-    def test_create_invalid_book(self):
+    def test_create_book_invalid(self):
         response = client.post(
             reverse('books-list'),
             data=json.dumps(self.invalid_payload),
             content_type='application/json'
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(Book.objects.count(), 0)
 
 
 class GetAllBooksTest(APITestCase):
