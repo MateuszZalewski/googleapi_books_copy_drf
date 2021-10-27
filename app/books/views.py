@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from rest_framework import viewsets, status
 from rest_framework import filters as drf_filters
 from rest_framework.response import Response
@@ -33,10 +35,19 @@ class BookViewSet(viewsets.ModelViewSet):
     ordering_fields = ('volumeInfo__publishedDate',)
     filterset_class = BookFilter
 
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        serializer = BookSerializer(queryset, many=True)
+        return Response(OrderedDict([
+            ('kind', 'books#volumes'),
+            ('totalItems', queryset.count()),
+            ('items', serializer.data)
+        ]))
+
     def create(self, request, *args, **kwargs):
         data = request.data.get('items', request.data)
         many = isinstance(data, list)
-        print (data, many)
+        print(data, many)
         serializer = self.get_serializer(data=data, many=many)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)

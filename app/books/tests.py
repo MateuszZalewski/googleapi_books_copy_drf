@@ -119,7 +119,9 @@ class GetAllBooksTest(APITestCase):
 
         books = Book.objects.all()
         serializer = BookSerializer(books, many=True)
-        self.assertEqual(response.data, serializer.data)
+        self.assertEqual(response.data['kind'], 'books#volumes')
+        self.assertEqual(response.data['items'], serializer.data)
+        self.assertEqual(response.data['totalItems'], len(serializer.data))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
