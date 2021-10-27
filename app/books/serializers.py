@@ -41,6 +41,22 @@ class SaleInfoSerializer(NonNullModelSerializer):
         model = SaleInfo
         exclude = ('book', 'id')
 
+    def create(self, validated_data):
+        list_price_data = validated_data.pop('listPrice', None)
+        retail_price_data = validated_data.pop('retailPrice', None)
+        offer_data = validated_data.pop('offer', None)
+        book = validated_data.pop('book', None)
+
+        sale_info = SaleInfo.objects.create(book=book, **validated_data)
+        if list_price_data:
+            ListPrice.objects.create(saleInfo=sale_info, **list_price_data)
+        if retail_price_data:
+            RetailPrice.objects.create(saleInfo=sale_info, **retail_price_data)
+        if offer_data:
+            Offer.objects.create(saleInfo=sale_info, **offer_data)
+
+        return sale_info
+
 
 class ImageLinksSummarySerializer(NonNullModelSerializer):
     class Meta:
@@ -97,6 +113,41 @@ class VolumeInfoSerializer(NonNullModelSerializer):
         model = VolumeInfo
         exclude = ('book', 'id')
 
+    def create(self, validated_data):
+        categories_data = validated_data.pop('categories', None)
+        authors_data = validated_data.pop('authors', None)
+        industry_identifiers_data = validated_data.pop('industryIdentifiers', None)
+        dimensions_data = validated_data.pop('dimensions', None)
+        reading_modes_data = validated_data.pop('readingModes', None)
+        panelization_summary_data = validated_data.pop('panelizationSummary', None)
+        image_links_data = validated_data.pop('imageLinks', None)
+        book = validated_data.pop('book', None)
+
+        volume_info = VolumeInfo.objects.create(book=book, **validated_data)
+
+        if categories_data:
+            for category_data in categories_data:
+                category = Category.objects.create(name=category_data)
+                volume_info.categories.add(category)
+        if authors_data:
+            for author_data in authors_data:
+                author = Author.objects.create(fullName=author_data)
+                volume_info.authors.add(author)
+        if industry_identifiers_data:
+            for industry_identifier_data in industry_identifiers_data:
+                IndustryIdentifier.objects.create(volumeInfo=volume_info, **industry_identifier_data)
+        if dimensions_data:
+            Dimensions.objects.create(volumeInfo=volume_info, **dimensions_data)
+        if reading_modes_data:
+            ReadingModes.objects.create(volumeInfo=volume_info, **reading_modes_data)
+        if panelization_summary_data:
+            PanelizationSummary.objects.create(volumeInfo=volume_info, **panelization_summary_data)
+        if image_links_data:
+            ImageLinks.objects.create(volumeInfo=volume_info, **image_links_data)
+        volume_info.save()
+
+        return volume_info
+
 
 class DownloadAccessSerializer(NonNullModelSerializer):
     class Meta:
@@ -125,6 +176,23 @@ class AccessInfoSerializer(NonNullModelSerializer):
         model = AccessInfo
         exclude = ('book', 'id')
 
+    def create(self, validated_data):
+        pdf_data = validated_data.pop('pdf', None)
+        epub_data = validated_data.pop('epub', None)
+        download_access_data = validated_data.pop('downloadAccess', None)
+        book = validated_data.pop('book', None)
+
+        access_info = AccessInfo.objects.create(book=book, **validated_data)
+
+        if pdf_data:
+            Pdf.objects.create(accessInfo=access_info, **pdf_data)
+        if epub_data:
+            Epub.objects.create(accessInfo=access_info, **epub_data)
+        if download_access_data:
+            DownloadAccess.objects.create(accessInfo=access_info, **download_access_data)
+
+        return access_info
+
 
 class SearchInfoSerializer(NonNullModelSerializer):
     class Meta:
@@ -145,70 +213,30 @@ class BookSerializer(NonNullModelSerializer):
     def create(self, validated_data):
 
         search_info_data = validated_data.pop('searchInfo', None)
-
-        volume_info_data = validated_data.pop('volumeInfo', {})
-        categories_data = volume_info_data.pop('categories', None)
-        authors_data = volume_info_data.pop('authors', None)
-        industry_identifiers_data = volume_info_data.pop('industryIdentifiers', None)
-        dimensions_data = volume_info_data.pop('dimensions', None)
-        reading_modes_data = volume_info_data.pop('readingModes', None)
-        panelization_summary_data = volume_info_data.pop('panelizationSummary', None)
-        image_links_data = volume_info_data.pop('imageLinks', None)
-
-        access_info_data = validated_data.pop('accessInfo', {})
-        pdf_data = access_info_data.pop('pdf', None)
-        epub_data = access_info_data.pop('epub', None)
-        download_access_data = access_info_data.pop('downloadAccess', None)
-
-        sale_info_data = validated_data.pop('saleInfo', {})
-        list_price_data = sale_info_data.pop('listPrice', None)
-        retail_price_data = sale_info_data.pop('retailPrice', None)
-        offer_data = sale_info_data.pop('offer', None)
+        volume_info_data = validated_data.pop('volumeInfo', None)
+        access_info_data = validated_data.pop('accessInfo', None)
+        sale_info_data = validated_data.pop('saleInfo', None)
 
         book = Book.objects.create(**validated_data)
 
         if search_info_data:
-            SearchInfo.objects.create(book=book, **search_info_data)
-
-        if volume_info_data:
-            volume_info = VolumeInfo.objects.create(book=book, **volume_info_data)
-            if categories_data:
-                for category_data in categories_data:
-                    category = Category.objects.create(name=category_data)
-                    volume_info.categories.add(category)
-            if authors_data:
-                for author_data in authors_data:
-                    author = Author.objects.create(fullName=author_data)
-                    volume_info.authors.add(author)
-            if industry_identifiers_data:
-                for industry_identifier_data in industry_identifiers_data:
-                    IndustryIdentifier.objects.create(volumeInfo=volume_info, **industry_identifier_data)
-            if dimensions_data:
-                Dimensions.objects.create(volumeInfo=volume_info, **dimensions_data)
-            if reading_modes_data:
-                ReadingModes.objects.create(volumeInfo=volume_info, **reading_modes_data)
-            if panelization_summary_data:
-                PanelizationSummary.objects.create(volumeInfo=volume_info, **panelization_summary_data)
-            if image_links_data:
-                ImageLinks.objects.create(volumeInfo=volume_info, **image_links_data)
-            volume_info.save()
+            search_info_serializer = SearchInfoSerializer()
+            search_info_data['book'] = book
+            search_info_serializer.create(search_info_data)
 
         if access_info_data:
-            access_info = AccessInfo.objects.create(book=book, **access_info_data)
-            if pdf_data:
-                Pdf.objects.create(accessInfo=access_info, **pdf_data)
-            if epub_data:
-                Epub.objects.create(accessInfo=access_info, **epub_data)
-            if download_access_data:
-                DownloadAccess.objects.create(accessInfo=access_info, **download_access_data)
+            access_info_serializer = AccessInfoSerializer()
+            access_info_data['book'] = book
+            access_info_serializer.create(access_info_data)
+
+        if volume_info_data:
+            volume_info_serializer = VolumeInfoSerializer()
+            volume_info_data['book'] = book
+            volume_info_serializer.create(volume_info_data)
 
         if sale_info_data:
-            sale_info = SaleInfo.objects.create(book=book, **sale_info_data)
-            if list_price_data:
-                ListPrice.objects.create(saleInfo=sale_info, **list_price_data)
-            if retail_price_data:
-                RetailPrice.objects.create(saleInfo=sale_info, **retail_price_data)
-            if offer_data:
-                Offer.objects.create(saleInfo=sale_info, **offer_data)
+            sale_info_serializer = SaleInfoSerializer()
+            sale_info_data['book'] = book
+            sale_info_serializer.create(sale_info_data)
 
         return book
