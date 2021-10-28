@@ -57,6 +57,27 @@ class SaleInfoSerializer(NonNullModelSerializer):
 
         return sale_info
 
+    def update(self, instance, validated_data):
+        retail_price_data = validated_data.pop('retailPrice', {})
+        if retail_price_data:
+            retail_price_serializer = self.fields['retailPrice']
+            retail_price_instance = instance.retailPrice
+            retail_price_serializer.update(retail_price_instance, retail_price_data)
+
+        list_price_data = validated_data.pop('listPrice', {})
+        if list_price_data:
+            list_price_serializer = self.fields['listPrice']
+            list_price_instance = instance.listPrice
+            list_price_serializer.update(list_price_instance, list_price_data)
+
+        offer_data = validated_data.pop('offer', {})
+        if offer_data:
+            offer_serializer = self.fields['offer']
+            offer_instance = instance.offer
+            offer_serializer.update(offer_instance, offer_data)
+
+        return super().update(instance, validated_data)
+
 
 class ImageLinksSummarySerializer(NonNullModelSerializer):
     class Meta:
@@ -112,6 +133,39 @@ class VolumeInfoSerializer(NonNullModelSerializer):
     class Meta:
         model = VolumeInfo
         exclude = ('book', 'id')
+
+    def update(self, instance, validated_data):
+
+        industry_identifier_data = validated_data.pop('industryIdentifier', {})
+        if industry_identifier_data:
+            industry_identifier_serializer = self.fields['industryIdentifier']
+            industry_identifier_instance = instance.industryIdentifier
+            industry_identifier_serializer.update(industry_identifier_instance, industry_identifier_data)
+
+        dimensions_data = validated_data.pop('dimensions', {})
+        if dimensions_data:
+            dimensions_serializer = self.fields['dimensions']
+            dimensions_instance = instance.dimensions
+            dimensions_serializer.update(dimensions_instance, dimensions_data)
+
+        reading_modes_data = validated_data.pop('readingModes', {})
+        if reading_modes_data:
+            reading_modes_serializer = self.fields['readingModes']
+            reading_modes_instance = instance.readingModes
+            reading_modes_serializer.update(reading_modes_instance, reading_modes_data)
+
+        panelization_summary_data = validated_data.pop('panelizationSummary', {})
+        if panelization_summary_data:
+            panelization_summary_serializer = self.fields['panelizationSummary']
+            panelization_summary_instance = instance.panelizationSummary
+            panelization_summary_serializer.update(panelization_summary_instance, panelization_summary_data)
+
+        image_links_data = validated_data.pop('imageLinks', {})
+        if image_links_data:
+            image_links_serializer = self.fields['imageLinks']
+            image_links_instance = instance.imageLinks
+            image_links_serializer.update(image_links_instance, image_links_data)
+        return super().update(instance, validated_data)
 
     def create(self, validated_data):
         categories_data = validated_data.pop('categories', None)
@@ -176,6 +230,27 @@ class AccessInfoSerializer(NonNullModelSerializer):
         model = AccessInfo
         exclude = ('book', 'id')
 
+    def update(self, instance, validated_data):
+        pdf_data = validated_data.pop('pdf', {})
+        if pdf_data:
+            pdf_serializer = self.fields['pdf']
+            pdf_instance = instance.pdf
+            pdf_serializer.update(pdf_instance, pdf_data)
+
+        epub_data = validated_data.pop('epub', {})
+        if epub_data:
+            epub_serializer = self.fields['epub']
+            epub_instance = instance.epub
+            epub_serializer.update(epub_instance, pdf_data)
+
+        download_access_data = validated_data.pop('downloadAccess', {})
+        if download_access_data:
+            download_access_serializer = self.fields['downloadAccess']
+            download_access_instance = instance.downloadAccess
+            download_access_serializer.update(download_access_instance, pdf_data)
+
+        return super().update(instance, validated_data)
+
     def create(self, validated_data):
         pdf_data = validated_data.pop('pdf', None)
         epub_data = validated_data.pop('epub', None)
@@ -210,8 +285,35 @@ class BookSerializer(NonNullModelSerializer):
         model = Book
         fields = '__all__'
 
-    def create(self, validated_data):
+    def update(self, instance, validated_data):
+        search_info_data = validated_data.pop('searchInfo', {})
+        if search_info_data:
+            # search_info_serializer = self.fields['searchInfo']
+            search_info_serializer = SearchInfoSerializer()
+            search_info_instance = instance.searchInfo
+            search_info_serializer.update(search_info_instance, search_info_data)
 
+        volume_info_data = validated_data.pop('volumeInfo', {})
+        if volume_info_data:
+            volume_info_serializer = self.fields['volumeInfo']
+            volume_info_instance = instance.volumeInfo
+            volume_info_serializer.update(volume_info_instance, volume_info_data)
+
+        access_info_data = validated_data.pop('accessInfo', {})
+        if access_info_data:
+            access_info_serializer = self.fields['accessInfo']
+            access_info_instance = instance.accessInfo
+            access_info_serializer.update(access_info_instance, access_info_data)
+
+        sale_info_data = validated_data.pop('saleInfo', {})
+        if sale_info_data:
+            sale_info_serializer = self.fields['saleInfo']
+            sale_info_instance = instance.saleInfo
+            sale_info_serializer.update(sale_info_instance, sale_info_data)
+
+        return super().update(instance, validated_data)
+
+    def create(self, validated_data):
         search_info_data = validated_data.pop('searchInfo', None)
         volume_info_data = validated_data.pop('volumeInfo', None)
         access_info_data = validated_data.pop('accessInfo', None)
@@ -220,22 +322,22 @@ class BookSerializer(NonNullModelSerializer):
         book = Book.objects.create(**validated_data)
 
         if search_info_data:
-            search_info_serializer = SearchInfoSerializer()
+            search_info_serializer = self.fields['searchInfo']
             search_info_data['book'] = book
             search_info_serializer.create(search_info_data)
 
         if access_info_data:
-            access_info_serializer = AccessInfoSerializer()
+            access_info_serializer = self.fields['accessInfo']
             access_info_data['book'] = book
             access_info_serializer.create(access_info_data)
 
         if volume_info_data:
-            volume_info_serializer = VolumeInfoSerializer()
+            volume_info_serializer = self.fields['volumeInfo']
             volume_info_data['book'] = book
             volume_info_serializer.create(volume_info_data)
 
         if sale_info_data:
-            sale_info_serializer = SaleInfoSerializer()
+            sale_info_serializer = self.fields['saleInfo']
             sale_info_data['book'] = book
             sale_info_serializer.create(sale_info_data)
 

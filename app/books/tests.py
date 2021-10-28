@@ -8,6 +8,32 @@ from .serializers import BookSerializer
 client = APIClient()
 
 
+class PartialUpdateBookTest(APITestCase):
+    """ Test patching single book """
+    fixtures = ['books.json']
+
+    def test_partial_update_book_valid(self):
+        book = Book.objects.first()
+        data = {
+            'accessInfo': {
+                'pdf': {
+                    'isAvailable': not book.accessInfo.pdf.isAvailable
+                }
+            },
+            'volumeInfo': {
+                'language': 'de'
+            },
+            'saleInfo': {
+                'country': 'de'
+            },
+            'searchInfo': {
+                'textSnippet': 'baofbaeibf'
+            }
+        }
+        response = client.patch(reverse('books-detail', kwargs={'pk': book.pk}), data=data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
 class DeleteBookTest(APITestCase):
     """ Test deleting single book """
     fixtures = ['books.json']
@@ -28,7 +54,6 @@ class DeleteBookTest(APITestCase):
 
         self.assertEqual(Book.objects.count(), count_before)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
 
 
 class CreateNewBooksTest(APITestCase):
@@ -167,4 +192,3 @@ class GetSingleBookTest(APITestCase):
             reverse('books-detail', kwargs={'pk': '1'}))
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
