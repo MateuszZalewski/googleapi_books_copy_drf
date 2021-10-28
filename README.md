@@ -32,22 +32,13 @@ r = requests.get('https://www.googleapis.com/books/v1/volumes?q=keyword')
 requests.post('http://localhost:8000/books/', json=r.json())
 ```
 It is also capable of accepting single records
-### GET
-GET /books
 
-Returns list of all books in database.
+## Structure
 
-
-GET /books/id
-
-Returns record with id
-
-
-GET /books?sort=volumeInfo__publishedDate
-
-Returns all records sorted by publishDate
-
-
-GET /books/?author=author1&author=author2
-
-Returns books written by author1 or author2
+Endpoint | HTTP method | CRUD Method | Result
+---------|-------------|-------------|-------
+books| GET | READ | Get all books
+books/:id | GET | READ | Get a single book
+books | POST | CREATE | Add book or books
+books/:id | PATCH | UPDATE | Partially update book
+books/:id | DELETE | DELETE | Delete a single book
